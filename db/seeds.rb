@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+4.times do
+  Task.create(
+    title: "Studying",
+    details: "Need to do Ruby on Rails"
+  )
+end
