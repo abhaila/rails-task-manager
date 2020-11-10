@@ -23,9 +23,13 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task.update(task_params)
+    redirect_to task_path(@task)
   end
 
   def destroy
+    @task.destroy
+    redirect_to tasks_path
   end
 
   private
@@ -35,6 +39,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :details)
+    params.require(:task).permit(:title, :details, :completed)
   end
 end
